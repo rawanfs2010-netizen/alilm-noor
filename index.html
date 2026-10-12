@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>العِلم نور | مكتبة رقمية تعليمية</title>
+<meta name="description" content="مكتبة رقمية تعليمية مجانية تجمع الكتب والمراجع الدراسية والأكاديمية المتاحة قانونيًا.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0f1f3d;--navy2:#172c52;--gold:#c9a24b;--gold2:#e4c477;--white:#fff;--paper:#f6f4ee;--ink:#1b2438;--muted:#5d6678}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Cairo","Segoe UI",Tahoma,sans-serif;color:var(--ink);background:var(--white);line-height:1.8;font-size:17px}
+h1,h2,h3{font-family:"Amiri","Traditional Arabic",serif;line-height:1.4}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
+/* الرأس */
+header{background:var(--navy);color:var(--white);position:sticky;top:0;z-index:10;border-bottom:2px solid var(--gold)}
+.bar{display:flex;align-items:center;justify-content:space-between;padding:10px 0}
+.brand{display:flex;align-items:center;gap:10px;font-family:"Amiri",serif;font-size:1.7rem;font-weight:700;color:var(--gold2)}
+.brand svg{width:34px;height:40px}
+nav ul{display:flex;gap:22px;list-style:none;font-weight:600;font-size:.95rem}
+nav a:hover{color:var(--gold2)}
+@media(max-width:700px){nav ul{gap:12px;font-size:.8rem}.brand{font-size:1.4rem}}
+@media(max-width:480px){nav li:nth-child(n+3){display:none}}
+
+/* البطل */
+.hero{background:var(--navy);color:var(--white);padding:56px 0 72px;position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center}
+.hero h1{font-size:clamp(2.2rem,6vw,3.6rem);font-weight:700;color:var(--gold2)}
+.hero p.lead{font-size:1.15rem;color:#d7ddea;margin:12px 0 26px;max-width:34em}
+.search{display:flex;background:var(--white);border-radius:12px;overflow:hidden;max-width:560px;border:2px solid var(--gold)}
+.search input{flex:1;border:0;padding:14px 16px;font:inherit;color:var(--ink);min-width:0}
+.search input:focus{outline:none}
+.search button{border:0;background:var(--gold);color:var(--navy);font:inherit;font-weight:700;padding:0 22px;cursor:pointer}
+.search button:hover{background:var(--gold2)}
+.hint{font-size:.88rem;color:#aab4c8;margin-top:8px}
+.windows{display:flex;gap:12px;justify-content:center;align-items:flex-end}
+.win{width:30%;border:2px solid var(--gold);border-radius:999px 999px 6px 6px;background:linear-gradient(180deg,var(--gold2) 0%,rgba(228,196,119,.15) 70%,transparent);}
+.win:nth-child(1){height:130px}.win:nth-child(2){height:190px}.win:nth-child(3){height:150px}
+@media(max-width:760px){.hero .wrap{grid-template-columns:1fr}.windows{display:none}.hero{padding:40px 0 48px}}
+
+/* الأقسام العامة */
+section{padding:56px 0}
+.head{margin-bottom:26px}
+.head h2{font-size:2rem;color:var(--navy)}
+.head p{color:var(--muted)}
+.subjects{background:var(--paper)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
+.subj{background:var(--white);border:1px solid #e3dfd1;border-top:4px solid var(--gold);border-radius:10px;padding:18px}
+.subj:hover{border-top-color:var(--navy)}
+.subj h3{font-size:1.3rem;color:var(--navy)}
+.subj p{font-size:.92rem;color:var(--muted)}
+
+/* الكتب */
+.books{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px}
+.book{border:1px solid #e1e5ee;border-radius:10px;overflow:hidden;display:flex;flex-direction:column;background:var(--white)}
+.cover{background:var(--navy2);color:var(--gold2);font-family:"Amiri",serif;font-size:1.35rem;padding:22px 16px;min-height:96px;display:flex;align-items:center;border-bottom:3px solid var(--gold)}
+.info{padding:14px 16px;display:flex;flex-direction:column;gap:4px;flex:1}
+.info b{font-size:1.02rem}
+.info span{font-size:.88rem;color:var(--muted)}
+.tag{align-self:flex-start;font-size:.78rem;background:#f3ead0;color:#6b5314;border-radius:6px;padding:0 8px;margin-top:4px}
+.info a{margin-top:auto;padding-top:10px;color:var(--navy);font-weight:700;border-bottom:2px solid var(--gold);align-self:flex-start}
+.none{display:none;padding:24px;background:var(--paper);border-radius:10px;margin-top:16px}
+.note{margin-top:20px;font-size:.9rem;color:var(--muted)}
+
+/* عن المنصة */
+.about{background:var(--navy);color:var(--white)}
+.about h2{color:var(--gold2)}
+.about .head p{color:#c4ccdc}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;list-style:none;counter-reset:s}
+.steps li{counter-increment:s;background:var(--navy2);border-right:4px solid var(--gold);border-radius:8px;padding:16px 18px}
+.steps li::before{content:counter(s) ".";color:var(--gold2);font-weight:700;margin-left:6px}
+.promise{margin-top:24px;padding:16px 18px;border:1px dashed var(--gold);border-radius:8px;color:#e6e9f1}
+
+/* التذييل */
+footer{background:#0a1530;color:#b9c2d6;padding:36px 0 22px;border-top:2px solid var(--gold)}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:22px}
+footer h3{color:var(--gold2);font-size:1.2rem;margin-bottom:6px}
+footer ul{list-style:none}
+footer li a:hover{color:var(--gold2)}
+.copy{margin-top:26px;padding-top:14px;border-top:1px solid #22345c;font-size:.88rem}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#top" aria-label="العِلم نور">
+      <svg viewBox="0 0 34 40" aria-hidden="true"><path d="M3 38V17C3 8 9 2 17 2s14 6 14 15v21z" fill="none" stroke="#c9a24b" stroke-width="2.5"/><path d="M17 10v22M9 22h16" stroke="#e4c477" stroke-width="2.5" stroke-linecap="round"/></svg>
+      العِلم نور
+    </a>
+    <nav aria-label="القائمة الرئيسية">
+      <ul>
+        <li><a href="#subjects">الأقسام</a></li>
+        <li><a href="#featured">المميّز</a></li>
+        <li><a href="#about">عن المنصة</a></li>
+        <li><a href="#contact">تواصل</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <h1>كل كتاب نافذة، وكل معرفة نور</h1>
+      <p class="lead">مكتبة رقمية للدراسة والمعرفة، تجمع الكتب والمراجع المتاحة قانونيًا في مختلف التخصصات واللغات.</p>
+      <form class="search" role="search" onsubmit="return doSearch(event)">
+        <input id="q" type="search" placeholder="ابحث عن كتاب أو مؤلف أو موضوع" aria-label="بحث">
+        <button type="submit">بحث</button>
+      </form>
+      <p class="hint">مثال: الجبر، الخوارزمي، بايثون</p>
+    </div>
+    <div class="windows" aria-hidden="true"><div class="win"></div><div class="win"></div><div class="win"></div></div>
+  </div>
+</div>
+
+<section id="subjects" class="subjects">
+  <div class="wrap">
+    <div class="head"><h2>الأقسام</h2><p>اختاري التخصص الذي تريدين البدء منه.</p></div>
+    <div class="grid">
+      <a class="subj" href="#featured" data-q="الرياضيات والعلوم"><h3>الرياضيات والعلوم</h3><p>الجبر والهندسة والفيزياء والكيمياء والأحياء.</p></a>
+      <a class="subj" href="#featured" data-q="الحاسوب"><h3>الحاسوب والذكاء الاصطناعي</h3><p>البرمجة وعلوم الحاسوب وتعلّم الآلة.</p></a>
+      <a class="subj" href="#featured" data-q="اللغات"><h3>اللغات وتعلّمها</h3><p>قواعد ومعاجم وكتب تعليم اللغات.</p></a>
+      <a class="subj" href="#featured" data-q="التعليم"><h3>التعليم والمناهج</h3><p>مناهج دراسية وطرق تدريس.</p></a>
+      <a class="subj" href="#featured" data-q="الجامعية"><h3>الكتب الجامعية والمراجع</h3><p>مراجع أكاديمية مفتوحة الترخيص.</p></a>
+      <a class="subj" href="#featured" data-q="التاريخ"><h3>التاريخ والجغرافيا</h3><p>مصادر تاريخية وأطالس ودراسات.</p></a>
+      <a class="subj" href="#featured" data-q="الطب"><h3>الطب والاقتصاد والإدارة</h3><p>مراجع في الصحة والمال والأعمال.</p></a>
+      <a class="subj" href="#featured" data-q="الأبحاث"><h3>الأبحاث والدراسات</h3><p>أبحاث علمية منشورة للجميع.</p></a>
+    </div>
+  </div>
+</section>
+
+<section id="featured">
+  <div class="wrap">
+    <div class="head"><h2>كتب ومراجع مميّزة</h2><p>كتب في الملكية العامة أو بتراخيص مفتوحة، مع رابط المصدر القانوني.</p></div>
+    <div class="books" id="books">
+      <article class="book" data-t="الجبر الخوارزمي رياضيات الرياضيات والعلوم تاريخ">
+        <div class="cover">الكتاب المختصر في حساب الجبر والمقابلة</div>
+        <div class="info"><b>الخوارزمي</b><span>الرياضيات والعلوم</span><em class="tag">ملكية عامة</em><a href="https://archive.org" target="_blank" rel="noopener">المصدر القانوني</a></div>
+      </article>
+      <article class="book" data-t="المقدمة ابن خلدون تاريخ اجتماع اقتصاد التاريخ والجغرافيا">
+        <div class="cover">المقدّمة</div>
+        <div class="info"><b>ابن خلدون</b><span>التاريخ والجغرافيا</span><em class="tag">ملكية عامة</em><a href="https://archive.org" target="_blank" rel="noopener">المصدر القانوني</a></div>
+      </article>
+      <article class="book" data-t="المناظر ابن الهيثم فيزياء ضوء الرياضيات والعلوم">
+        <div class="cover">كتاب المناظر</div>
+        <div class="info"><b>ابن الهيثم</b><span>الرياضيات والعلوم</span><em class="tag">ملكية عامة</em><a href="https://archive.org" target="_blank" rel="noopener">المصدر القانوني</a></div>
+      </article>
+      <article class="book" data-t="Think Python بايثون برمجة الحاسوب والذكاء الاصطناعي Allen Downey">
+        <div class="cover">Think Python</div>
+        <div class="info"><b>Allen Downey</b><span>الحاسوب والبرمجة</span><em class="tag">ترخيص مفتوح</em><a href="https://greenteapress.com" target="_blank" rel="noopener">المصدر القانوني</a></div>
+      </article>
+      <article class="book" data-t="OpenStax كتب جامعية الجامعية مراجع أكاديمية فيزياء كيمياء">
+        <div class="cover">مراجع OpenStax الجامعية</div>
+        <div class="info"><b>OpenStax</b><span>الكتب الجامعية</span><em class="tag">ترخيص مفتوح</em><a href="https://openstax.org" target="_blank" rel="noopener">المصدر القانوني</a></div>
+      </article>
+      <article class="book" data-t="مشروع غوتنبرغ كتب لغات اللغات تعليم">
+        <div class="cover">مكتبة مشروع غوتنبرغ</div>
+        <div class="info"><b>مشروع غوتنبرغ</b><span>اللغات والمراجع</span><em class="tag">ملكية عامة</em><a href="https://www.gutenberg.org" target="_blank" rel="noopener">المصدر القانوني</a></div>
+      </article>
+    </div>
+    <div class="none" id="none">لم نجد نتيجة مطابقة. جرّبي كلمة أخرى.</div>
+    <p class="note">هذه نماذج أولية للعرض، وسنضيف الكتب الحقيقية لاحقًا بعد التأكد من حالة حقوقها.</p>
+  </div>
+</section>
+
+<section id="about" class="about">
+  <div class="wrap">
+    <div class="head"><h2>عن المنصة</h2><p>«العِلم نور» مكتبة للدراسة والمعرفة التعليمية فقط، مجانية لكل طالب وباحث.</p></div>
+    <ol class="steps">
+      <li>ابحثي عن كتاب أو مؤلف أو موضوع، أو اختاري قسمًا.</li>
+      <li>افتحي صفحة الكتاب لترَي معلومات الترخيص.</li>
+      <li>اقرئي أو حمّلي من المصدر القانوني مباشرة.</li>
+    </ol>
+    <p class="promise">نحترم حقوق النشر: لا نرفع كتبًا محمية دون إذن، ونكتفي بالملكية العامة والتراخيص المفتوحة والملفات المسموح بتوزيعها، مع روابط للمصادر القانونية.</p>
+  </div>
+</section>
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="cols">
+      <div><h3>العِلم نور</h3><p>كل كتاب نافذة، وكل معرفة نور.</p></div>
+      <div><h3>روابط مهمة</h3><ul><li><a href="#subjects">الأقسام</a></li><li><a href="#featured">كتب مميّزة</a></li><li><a href="#about">عن المنصة</a></li></ul></div>
+      <div><h3>سياسات</h3><ul><li><a href="#about">حقوق النشر</a></li><li><a href="#about">سياسة الاستخدام</a></li><li><a href="#contact">تواصل معنا</a></li></ul></div>
+    </div>
+    <p class="copy">© 2026 العِلم نور. جميع الحقوق محفوظة.</p>
+  </div>
+</footer>
+
+<script>
+var books = document.querySelectorAll('#books .book');
+var none = document.getElementById('none');
+function filterBooks(text){
+  var t = text.trim().toLowerCase(), shown = 0;
+  books.forEach(function(b){
+    var ok = !t || (b.textContent + ' ' + b.dataset.t).toLowerCase().indexOf(t) > -1;
+    b.style.display = ok ? '' : 'none';
+    if (ok) shown++;
+  });
+  none.style.display = shown ? 'none' : 'block';
+}
+function doSearch(e){
+  e.preventDefault();
+  filterBooks(document.getElementById('q').value);
+  document.getElementById('featured').scrollIntoView();
+  return false;
+}
+document.querySelectorAll('.subj').forEach(function(a){
+  a.addEventListener('click', function(){
+    document.getElementById('q').value = a.dataset.q;
+    filterBooks(a.dataset.q);
+  });
+});
+</script>
+</body>
+</html>
